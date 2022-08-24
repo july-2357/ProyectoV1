@@ -4,13 +4,19 @@ import { DashboardComponent } from './pages/components/dashboard/dashboard.compo
 import { CenterComponent } from './pages/components/center/center.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { PagesComponent } from './pages/pages.component';
+import { RegistroComponent } from './registro/registro.component';
 
 const routes: Routes = [
-{path:'center',component:CenterComponent},
-{path:'dashboard',component:DashboardComponent},
-{path:'prueba1',component:Prueba1Component},
-{path:'prueba2',component:Prueba2Component},
-{path:'',component:Prueba2Component},
+  {path:'',component:PagesComponent,children:[
+  {path:'center',component:CenterComponent},
+  {path:'dashboard',component:DashboardComponent},
+  {path:'prueba1',component:Prueba1Component},
+  {path:'prueba2',component:Prueba2Component},]},
+{path:'login',component:LoginComponent},
+{path:'registro',component:RegistroComponent},
+
 ];
 
 @NgModule({
